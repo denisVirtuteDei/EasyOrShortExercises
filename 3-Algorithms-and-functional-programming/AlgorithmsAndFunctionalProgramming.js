@@ -13,6 +13,12 @@ function add(n) {
 //3.3
 const multiplyAll = arr => n => arr.map(el => el * n)
 
+//3.4
+function uniqueSum(lst) {
+    if (lst.length === 0) return null;
+    return [...new Set(lst)].reduce((prev, val) => prev + val)
+}
+
 //3.5
 function reducer(arr, callback, initValue) {
     function red(arr, callback, result, index) {
