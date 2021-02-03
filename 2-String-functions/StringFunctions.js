@@ -3,13 +3,17 @@ console.log((function toMachineName(name, separator = '-') {
     return name.trim().split(/ \s*/).join(separator);
 })('  ijjasnd      ksndkasndk   '));
 
-//2.2
+//2.2.1
 var numberToMoney = function (n) {
     return Number(n
         .toString()
         .split('.')
         .map((val, i) => i === 1 ? val.slice(0, 2) : val)
         .join('.')).toLocaleString();
+};
+//2.2.2
+var numberToMoney = function (n) {
+    return (Math.trunc(n * 100) / 100).toLocaleString()
 };
 
 //2.3
