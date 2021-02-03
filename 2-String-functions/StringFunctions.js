@@ -32,6 +32,11 @@ function solution(roman) {
             , 0)
 }
 
+//2.5
+function duplicateCount(text) {
+    return [...new Set([...text.toLowerCase()].filter((el, i, arr) => arr.slice(i + 1).includes(el)))].length
+}
+
 //2.6
 const alphabet = {
     'a': '1', 'b': '2', 'c': '3', 'd': '4', 'e': '5',
@@ -45,7 +50,3 @@ function alphabetPosition(text) {
     return text.toLowerCase().replace(/[^a-z]/g, '').replace(/([a-z])/g, (el => alphabet[el].concat(' '))).trim();
 }
 
-//
-function duplicateCount(text) {
-    return [...new Set([...text.toLowerCase()].filter((el, i, arr) => arr.slice(i + 1).includes(el)))].length
-}
