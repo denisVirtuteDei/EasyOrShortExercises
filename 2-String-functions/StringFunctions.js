@@ -21,8 +21,16 @@ function alphabetized(s) {
     return [...s].filter(el => el.match(/[A-Za-z]/)).sort((l, r) => l.toLowerCase().localeCompare(r.toLowerCase())).join('');
 }
 
-//2.5
-
+//2.4
+function solution(roman) {
+    const fromRoman = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 }
+    return (Array.from(roman))
+        .reduce((prev, val, i, arr) =>
+            prev + (
+                fromRoman[val] < fromRoman[arr[i + 1]]
+                    ? -fromRoman[val] : fromRoman[val])
+            , 0)
+}
 
 //2.6
 const alphabet = {
