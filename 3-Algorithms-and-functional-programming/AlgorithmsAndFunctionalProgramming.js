@@ -10,6 +10,9 @@ function add(n) {
     return x => x + n
 }
 
+//3.3
+const multiplyAll = arr => n => arr.map(el => el * n)
+
 //3.5
 function reducer(arr, callback, initValue) {
     function red(arr, callback, result, index) {
