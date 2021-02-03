@@ -1,3 +1,9 @@
+//3.1
+function flattenAndSort(array) {
+    return array.length > 0 
+      ? array.reduce((prev, val) => prev.concat(val), []).sort((l,r) => l-r) 
+      : [];
+  }
 
 //3.5
 function reducer(arr, callback, initValue) {
