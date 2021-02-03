@@ -6,6 +6,5 @@ class Node {
 }
 
 function stringify(list) {
-    if(!list) return 'null'
-    return `${list.data} -> ${stringify(list.next)}`
+    return list ? `${list.data} -> ${stringify(list.next)}` : 'null'
 }

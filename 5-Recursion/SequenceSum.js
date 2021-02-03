@@ -1,4 +1,3 @@
-const sequenceSum = (begin, end, step) => {
-    if(begin > end) return 0;
-    return begin + sequenceSum(begin+step, end, step)
-  };
+const sequenceSum = (begin, end, step) => begin > end
+  ? 0
+  : begin + sequenceSum(begin + step, end, step)
