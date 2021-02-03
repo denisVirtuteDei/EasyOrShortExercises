@@ -1,7 +1,11 @@
 //2.1
-console.log((function toMachineName(name, separator = '-') {
-    return name.trim().split(/ \s*/).join(separator);
-})('  ijjasnd      ksndkasndk   '));
+function toMachineName(name, separator = '-') {
+    return name
+        .trim()
+        .split(/ \s*/)
+        .join(separator);
+}
+console.log(toMachineName('  ijjasnd      ksndkasndk   '));
 
 //2.2.1
 var numberToMoney = function (n) {
@@ -17,24 +21,28 @@ var numberToMoney = function (n) {
 };
 
 //2.3
-function alphabetized(s) {
-    return [...s].filter(el => el.match(/[A-Za-z]/)).sort((l, r) => l.toLowerCase().localeCompare(r.toLowerCase())).join('');
+function alphabetized(text) {
+    return [...text]
+        .filter(el => el.match(/[A-Za-z]/))
+        .sort((l, r) => l.toLowerCase().localeCompare(r.toLowerCase()))
+        .join('');
 }
 
 //2.4
 function solution(roman) {
     const fromRoman = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 }
     return (Array.from(roman))
-        .reduce((prev, val, i, arr) =>
-            prev + (
-                fromRoman[val] < fromRoman[arr[i + 1]]
-                    ? -fromRoman[val] : fromRoman[val])
-            , 0)
+        .reduce((prev, val, i, arr) => prev + (
+            fromRoman[val] < fromRoman[arr[i + 1]]
+                ? -fromRoman[val]
+                : fromRoman[val]
+        ), 0)
 }
 
 //2.5
 function duplicateCount(text) {
-    return [...new Set([...text.toLowerCase()].filter((el, i, arr) => arr.slice(i + 1).includes(el)))].length
+    return [...new Set([...text.toLowerCase()]
+        .filter((el, i, arr) => arr.slice(i + 1).includes(el)))].length
 }
 
 //2.6
