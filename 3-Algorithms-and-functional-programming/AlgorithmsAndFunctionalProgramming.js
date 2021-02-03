@@ -30,3 +30,10 @@ function reducer(arr, callback, initValue) {
         ? red(arr, callback, callback(initValue, arr[0]), 1)
         : red(arr, callback, callback(arr[0], arr[1]), 2)
 };
+
+//3.6
+function compose(...args) {
+    return numb => arguments.length > 0 
+      ? args.reduceRight((prev, val) => val(prev), numb) 
+      : numb
+  }
